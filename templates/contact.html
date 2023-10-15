@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <img src="/static/8.jpg" class="d-block w-100" alt="..." height="600px" width="300px">
+</div> 
+    <h1 class="text-center my-4">Contact Us!</h1>
+
+    <div class="container">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">First name</label>
+            <input type="text" name="firstName" class="form-control  border border-primary rounded" id="validationServer01" value="Mark" required>
+          
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationServer02">Last name</label>
+            <input type="text" name="lastName" class="form-control  border border-primary rounded" id="validationServer02" value="Otto" required>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationServer03">City</label>
+            <input type="text" name="city" class="form-control  border border-primary rounded" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+          
+          </div>
+          
+          <div class="col-md-3 mb-3">
+            <label for="validationServer05">Zip</label>
+            <input type="text" name="zip" class="form-control border border-primary rounded" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+          
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+            <label class="form-check-label" for="invalidCheck3">
+              Agree to terms and conditions
+            </label>
+            <div  id="invalidCheck3Feedback" class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </form>
+    </div>
+    
+
+{% endblock body %}
